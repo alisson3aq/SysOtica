@@ -107,6 +107,11 @@ namespace SysOticaForm
             listarReceitas.Show();
         }
 
+        private void testeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
 
 
 

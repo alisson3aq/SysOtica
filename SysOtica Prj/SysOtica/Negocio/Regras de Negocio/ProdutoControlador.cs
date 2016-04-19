@@ -11,7 +11,7 @@ namespace SysOtica.Negocio.Regras_de_Negocio
 {
     public class ProdutoControlador
     {
-        ProdutoDados ControladorProduto = new ProdutoDados();
+        ProdutoDados controladorproduto = new ProdutoDados();
 
 
 
@@ -39,18 +39,37 @@ namespace SysOtica.Negocio.Regras_de_Negocio
         }
 
 
-        public void Cadastra(Produto produto)
+        public void Insert(Produto produto)
         {
+            controladorproduto.Insert(produto);
+        }
 
-
+        public void Update(Produto produto)
+        {
+            controladorproduto.update(produto);
         }
 
 
-        public void Excluir(Produto produto)
+        public void Delete(Produto produto)
         {
-           
+            controladorproduto.delete(produto);          
+        }
+
+        public void Duplicidade(Produto produto)
+        {
+            controladorproduto.verificaduplicidade(produto);
+        }
+
+        List<Produto> select
+        {
+
+             get
+            {
+               return select;
+            }
 
         }
+
 
 
 

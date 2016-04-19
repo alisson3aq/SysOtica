@@ -169,6 +169,31 @@ namespace SysOtica.Negocio.Regras_de_Negocio
 
         }
 
+        public void Update(Cliente cliente)
+        {
+            cl.update(cliente);
+        }      
+
+        public void Delete(Cliente cliente)
+        {
+            cl.delete(cliente);
+        }
+
+        public void Duplicidade(Cliente cliente)
+        {
+
+            cl.verificaduplicidade(cliente);
+        }
+
+        public List<Cliente> select
+        {
+            get
+            {
+                return select;
+            }
+        }
+
+    
 
     }
 }

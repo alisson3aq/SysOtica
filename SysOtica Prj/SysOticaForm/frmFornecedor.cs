@@ -47,7 +47,6 @@ namespace SysOticaForm
                     fornecedor.Fr_observacoes = richTextBoxObservacoes.Text;
                 }
                 Fachada fachadaFornecedor = new Fachada();
-                fachadaFornecedor.VerificaPreenchimento(fornecedor);
                 fachadaFornecedor.InserirFornecedor(fornecedor);
                 MessageBox.Show("Fornecedor cadastrado com sucesso!");
                 LimparCampos();

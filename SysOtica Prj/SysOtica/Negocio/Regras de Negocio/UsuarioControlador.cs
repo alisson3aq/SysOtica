@@ -24,18 +24,24 @@ namespace SysOtica.Negocio.Regras_de_Negocio
 
         }
 
-        public void Alterar(Usuario usuario)
+        public void Insert(Usuario usuario)
         {
-          
+            user.Insert(usuario);
         }
-        public void Excluir(int id)
+        public void Uptade(Usuario usuario)
         {
-            
+            user.update(usuario);
         }
-        public void Inserir(Usuario usuario)
+
+        public void Delete(Usuario usuario)
         {
-           
+            user.delete(usuario);
         }
+        public void Duplicidade(Usuario usuario)
+        {
+            user.verificaduplicidade(usuario);
+        }
+
         public List<Usuario> listaUsuario
         {
             get
@@ -44,9 +50,10 @@ namespace SysOtica.Negocio.Regras_de_Negocio
             }
         }
 
-        public Usuario RetornaUsuario(Usuario filtro)
+       
+       /* public Usuario RetornaUsuario(Usuario filtro)
         {
             return filtro;
-        }
+        }*/
     }
 }

@@ -35,20 +35,24 @@ namespace SysOtica.Negocio.Regras_de_Negocio
 
         }
 
-        public void InserirFornecedor(Fornecedor fornecedor)
-        {
-      
-        }
-        public void AlterarFornecedor(Fornecedor fornecedor)
-        {
+        public void Insert(Fornecedor fornecedor)
+        {   
             
-
+            forn.Insert(fornecedor);
         }
-        public void ExcluirFornecedor(int id)
+        public void Update(Fornecedor fornecedor)
         {
+
+            forn.update(fornecedor);
+        }
+        public void Delete(Fornecedor fornecedor)
+        {
+            forn.delete(fornecedor);
         }
         public void VerificaDuplicidadeFornecedor(Fornecedor fornecedor)
         {
+            forn.verificaduplicidade(fornecedor);
+
         }
         public List<Fornecedor> listaFornecedor
         {

@@ -52,7 +52,7 @@ namespace SysOticaForm
                     produto.Pr_estoqueminimo = int.Parse(tbEstoqueMinimo.Text);
 
                 }
-                fachada.CadastrarProduto(produto);
+                fachada.Insert(produto);
                 //new ProdutoDados().inserir(produto);
                 MessageBox.Show("Produto Cadastrado com Sucesso!");
                 LimparCampos();

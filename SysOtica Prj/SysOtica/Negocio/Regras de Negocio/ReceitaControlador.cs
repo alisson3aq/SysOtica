@@ -49,9 +49,30 @@ namespace SysOtica.Negocio.Regras_de_Negocio
         }
         // ainda faltam data da validade e o campo adição
 
-        public void Inserir(Receita receita)
+        public void Insert(Receita receita)
         {
-            // ControladorReceita(receita);
+           ControladorReceita.Insert(receita);
+        }
+
+        public void Update(Receita receita)
+        {
+            ControladorReceita.update(receita);
+        }
+        public void Delete(Receita receita)
+        {
+            ControladorReceita.delete(receita);
+        }
+        public void Duplicidade(Receita receita)
+        {
+            ControladorReceita.verificaduplicidade(receita);
+        }
+        List<Receita> select1
+        {
+            get
+            {
+                return select1;
+            }
+
         }
 
     }

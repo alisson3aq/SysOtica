@@ -45,7 +45,7 @@ namespace SysOticaForm
 
         }
 
-     
+
 
         private void produtoToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -54,7 +54,7 @@ namespace SysOticaForm
             produto.Show();
         }
 
-      
+
 
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
@@ -69,7 +69,7 @@ namespace SysOticaForm
             receita.Show();
         }
 
-      
+
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -81,30 +81,34 @@ namespace SysOticaForm
 
         private void fornecedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //frmListarFornecedor listarfornecedores = new frmListarFornecedor();
-            //listarfornecedores.MdiParent = this;
-            //listarfornecedores.Show();
+            frmListaFornecedor listarfornecedores = new frmListaFornecedor();
+            listarfornecedores.MdiParent = this;
+            listarfornecedores.Show();
         }
 
         private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //frmListarUsuario listarUsuarios = new frmListarUsuario();
-            //listarUsuarios.MdiParent = this;
-            //listarUsuarios.Show();
+            frmListarUsuario listarUsuarios = new frmListarUsuario();
+            listarUsuarios.MdiParent = this;
+            listarUsuarios.Show();
         }
 
-     
-
- 
         private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //frmListarProduto listarProdutos = new frmListarProduto();
-            //listarProdutos.MdiParent = this;
-            //listarProdutos.Show();
+            frmListarProduto listarProdutos = new frmListarProduto();
+            listarProdutos.MdiParent = this;
+            listarProdutos.Show();
         }
 
-       
+        private void receitasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListarReceita listarReceitas = new frmListarReceita();
+            listarReceitas.MdiParent = this;
+            listarReceitas.Show();
+        }
 
-      
+
+
+
     }
 }

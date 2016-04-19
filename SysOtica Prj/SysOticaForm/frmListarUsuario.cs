@@ -16,5 +16,20 @@ namespace SysOticaForm
         {
             InitializeComponent();
         }
+
+        private void usuarioBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.usuarioBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.sysOticaDataSet);
+
+        }
+
+        private void frmListarUsuario_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'sysOticaDataSet.usuario' table. You can move, or remove it, as needed.
+            this.usuarioTableAdapter.Fill(this.sysOticaDataSet.usuario);
+
+        }
     }
 }

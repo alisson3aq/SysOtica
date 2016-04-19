@@ -16,5 +16,20 @@ namespace SysOticaForm
         {
             InitializeComponent();
         }
+
+        private void receitaBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.receitaBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.sysOticaDataSet);
+
+        }
+
+        private void frmListarReceita_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'sysOticaDataSet.receita' table. You can move, or remove it, as needed.
+            this.receitaTableAdapter.Fill(this.sysOticaDataSet.receita);
+
+        }
     }
 }

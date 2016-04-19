@@ -62,18 +62,19 @@ namespace SysOticaForm
 
         private void clienteDataGridView_DoubleClick(object sender, EventArgs e)
         {
-            if (clienteDataGridView.SelectedRows[0].Index >= 0)
-            {
-                //Cliente clienteSelecionado = listaCliente.ElementAt(clienteDataGridView.SelectedRows[0].Index);
+            //if (clienteDataGridView.SelectedRows.Count > 0)
+            //{
 
-                MessageBox.Show(Convert.ToString(clienteDataGridView.SelectedRows[0].Index).ToString());
-                //frmCliente frmcl = new frmCliente();
-                //frmcl.Show();
-                //frmAltCliente alteraCl = new frmAltCliente();
-                //alteraCl.Show();
+            //    frmAltCliente alterarCliente = new frmAltCliente((Cliente)clienteDataGridView.SelectedRows[0].DataBoundItem);
 
 
-            }
+
+            //    //Cliente clienteSelecionado = listaCliente.ElementAt(clienteDataGridView.SelectedRows[0].Index);
+            //    //frmCliente frmcl = new frmCliente();
+            //    //frmcl.Show();
+            //    //frmAltCliente alteraCl = new frmAltCliente();
+            //    //alteraCl.Show();
+            //}
         }
     }
 }

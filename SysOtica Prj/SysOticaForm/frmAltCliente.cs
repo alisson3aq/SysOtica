@@ -21,6 +21,10 @@ namespace SysOticaForm
         {
             InitializeComponent();
         }
+        public frmAltCliente(Cliente c)
+        {
+            InitializeComponent();
+        }
         private void frmAltCliente_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'sysOticaDataSet.cliente' table. You can move, or remove it, as needed.

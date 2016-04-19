@@ -1,6 +1,6 @@
 ﻿namespace SysOticaForm
 {
-    partial class frmAltFornecedor
+    partial class frmListaFornecedor
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "frmAltFornecedor";
+            this.Text = "frmListaFornecedor";
         }
 
         #endregion

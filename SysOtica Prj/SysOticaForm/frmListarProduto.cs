@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SysOticaForm
 {
-    public partial class frmAltProduto : Form
+    public partial class frmListarProduto : Form
     {
-        public frmAltProduto()
+        public frmListarProduto()
         {
             InitializeComponent();
         }

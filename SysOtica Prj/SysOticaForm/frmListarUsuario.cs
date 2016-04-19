@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SysOticaForm
 {
-    public partial class frmAltUsuario : Form
+    public partial class frmListarUsuario : Form
     {
-        public frmAltUsuario()
+        public frmListarUsuario()
         {
             InitializeComponent();
         }

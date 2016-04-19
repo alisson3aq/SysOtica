@@ -76,6 +76,9 @@ namespace SysOtica.Conexao
                 cmd.Parameters.Add("@cl_observacoes", SqlDbType.VarChar);
                 cmd.Parameters["@cl_observacoes"].Value = cliente.Cl_observacoes;
 
+
+
+
                 //executando a instrucao 
                 cmd.ExecuteNonQuery();
                 //liberando a memoria 

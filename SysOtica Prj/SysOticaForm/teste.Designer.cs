@@ -29,244 +29,266 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.sysOticaDataSet = new SysOticaForm.SysOticaDataSet();
-            this.sysOticaDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sysOticaDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sysOticaDataSet = new SysOticaForm.SysOticaDataSet();
             this.clienteTableAdapter = new SysOticaForm.SysOticaDataSetTableAdapters.clienteTableAdapter();
-            this.clidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cldatanascimentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clcpfDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clrgDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cltelefoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clcelularDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cltelefone2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clcepDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clenderecoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnumeroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clbairroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clcidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clufDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clemailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnomepaiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnomemaeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clprofissaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clobservacoesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sysOticaDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sysOticaDataSetBindingSource)).BeginInit();
+            this.clienteBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tableAdapterManager = new SysOticaForm.SysOticaDataSetTableAdapters.TableAdapterManager();
+            this.clienteDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sysOticaDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sysOticaDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteDataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clidDataGridViewTextBoxColumn,
-            this.clnomeDataGridViewTextBoxColumn,
-            this.cldatanascimentoDataGridViewTextBoxColumn,
-            this.clcpfDataGridViewTextBoxColumn,
-            this.clrgDataGridViewTextBoxColumn,
-            this.cltelefoneDataGridViewTextBoxColumn,
-            this.clcelularDataGridViewTextBoxColumn,
-            this.cltelefone2DataGridViewTextBoxColumn,
-            this.clcepDataGridViewTextBoxColumn,
-            this.clenderecoDataGridViewTextBoxColumn,
-            this.clnumeroDataGridViewTextBoxColumn,
-            this.clbairroDataGridViewTextBoxColumn,
-            this.clcidadeDataGridViewTextBoxColumn,
-            this.clufDataGridViewTextBoxColumn,
-            this.clemailDataGridViewTextBoxColumn,
-            this.clnomepaiDataGridViewTextBoxColumn,
-            this.clnomemaeDataGridViewTextBoxColumn,
-            this.clprofissaoDataGridViewTextBoxColumn,
-            this.clobservacoesDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.clienteBindingSource;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(412, 294);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // sysOticaDataSet
-            // 
-            this.sysOticaDataSet.DataSetName = "SysOticaDataSet";
-            this.sysOticaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sysOticaDataSetBindingSource
-            // 
-            this.sysOticaDataSetBindingSource.DataSource = this.sysOticaDataSet;
-            this.sysOticaDataSetBindingSource.Position = 0;
             // 
             // clienteBindingSource
             // 
             this.clienteBindingSource.DataMember = "cliente";
             this.clienteBindingSource.DataSource = this.sysOticaDataSetBindingSource;
             // 
+            // sysOticaDataSetBindingSource
+            // 
+            this.sysOticaDataSetBindingSource.DataSource = this.sysOticaDataSet;
+            this.sysOticaDataSetBindingSource.Position = 0;
+            // 
+            // sysOticaDataSet
+            // 
+            this.sysOticaDataSet.DataSetName = "SysOticaDataSet";
+            this.sysOticaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // clienteTableAdapter
             // 
             this.clienteTableAdapter.ClearBeforeFill = true;
             // 
-            // clidDataGridViewTextBoxColumn
+            // clienteBindingSource1
             // 
-            this.clidDataGridViewTextBoxColumn.DataPropertyName = "cl_id";
-            this.clidDataGridViewTextBoxColumn.HeaderText = "cl_id";
-            this.clidDataGridViewTextBoxColumn.Name = "clidDataGridViewTextBoxColumn";
-            this.clidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.clienteBindingSource1.DataMember = "cliente";
+            this.clienteBindingSource1.DataSource = this.sysOticaDataSet;
             // 
-            // clnomeDataGridViewTextBoxColumn
+            // tableAdapterManager
             // 
-            this.clnomeDataGridViewTextBoxColumn.DataPropertyName = "cl_nome";
-            this.clnomeDataGridViewTextBoxColumn.HeaderText = "cl_nome";
-            this.clnomeDataGridViewTextBoxColumn.Name = "clnomeDataGridViewTextBoxColumn";
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.categoriaTableAdapter = null;
+            this.tableAdapterManager.clienteTableAdapter = this.clienteTableAdapter;
+            this.tableAdapterManager.fornecedorTableAdapter = null;
+            this.tableAdapterManager.produtofornecedorTableAdapter = null;
+            this.tableAdapterManager.produtoTableAdapter = null;
+            this.tableAdapterManager.produtovendaTableAdapter = null;
+            this.tableAdapterManager.receitaTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = SysOticaForm.SysOticaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.usuarioTableAdapter = null;
+            this.tableAdapterManager.vendaTableAdapter = null;
             // 
-            // cldatanascimentoDataGridViewTextBoxColumn
+            // clienteDataGridView
             // 
-            this.cldatanascimentoDataGridViewTextBoxColumn.DataPropertyName = "cl_datanascimento";
-            this.cldatanascimentoDataGridViewTextBoxColumn.HeaderText = "cl_datanascimento";
-            this.cldatanascimentoDataGridViewTextBoxColumn.Name = "cldatanascimentoDataGridViewTextBoxColumn";
+            this.clienteDataGridView.AutoGenerateColumns = false;
+            this.clienteDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.clienteDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn15,
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn17,
+            this.dataGridViewTextBoxColumn18,
+            this.dataGridViewTextBoxColumn19});
+            this.clienteDataGridView.DataSource = this.clienteBindingSource1;
+            this.clienteDataGridView.Location = new System.Drawing.Point(82, 24);
+            this.clienteDataGridView.Name = "clienteDataGridView";
+            this.clienteDataGridView.Size = new System.Drawing.Size(300, 220);
+            this.clienteDataGridView.TabIndex = 0;
             // 
-            // clcpfDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn1
             // 
-            this.clcpfDataGridViewTextBoxColumn.DataPropertyName = "cl_cpf";
-            this.clcpfDataGridViewTextBoxColumn.HeaderText = "cl_cpf";
-            this.clcpfDataGridViewTextBoxColumn.Name = "clcpfDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "cl_id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "cl_id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
-            // clrgDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn2
             // 
-            this.clrgDataGridViewTextBoxColumn.DataPropertyName = "cl_rg";
-            this.clrgDataGridViewTextBoxColumn.HeaderText = "cl_rg";
-            this.clrgDataGridViewTextBoxColumn.Name = "clrgDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "cl_nome";
+            this.dataGridViewTextBoxColumn2.HeaderText = "cl_nome";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
-            // cltelefoneDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn3
             // 
-            this.cltelefoneDataGridViewTextBoxColumn.DataPropertyName = "cl_telefone";
-            this.cltelefoneDataGridViewTextBoxColumn.HeaderText = "cl_telefone";
-            this.cltelefoneDataGridViewTextBoxColumn.Name = "cltelefoneDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "cl_datanascimento";
+            this.dataGridViewTextBoxColumn3.HeaderText = "cl_datanascimento";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
-            // clcelularDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn4
             // 
-            this.clcelularDataGridViewTextBoxColumn.DataPropertyName = "cl_celular";
-            this.clcelularDataGridViewTextBoxColumn.HeaderText = "cl_celular";
-            this.clcelularDataGridViewTextBoxColumn.Name = "clcelularDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "cl_cpf";
+            this.dataGridViewTextBoxColumn4.HeaderText = "cl_cpf";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
-            // cltelefone2DataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn5
             // 
-            this.cltelefone2DataGridViewTextBoxColumn.DataPropertyName = "cl_telefone2";
-            this.cltelefone2DataGridViewTextBoxColumn.HeaderText = "cl_telefone2";
-            this.cltelefone2DataGridViewTextBoxColumn.Name = "cltelefone2DataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "cl_rg";
+            this.dataGridViewTextBoxColumn5.HeaderText = "cl_rg";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
-            // clcepDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn6
             // 
-            this.clcepDataGridViewTextBoxColumn.DataPropertyName = "cl_cep";
-            this.clcepDataGridViewTextBoxColumn.HeaderText = "cl_cep";
-            this.clcepDataGridViewTextBoxColumn.Name = "clcepDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "cl_telefone";
+            this.dataGridViewTextBoxColumn6.HeaderText = "cl_telefone";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
-            // clenderecoDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn7
             // 
-            this.clenderecoDataGridViewTextBoxColumn.DataPropertyName = "cl_endereco";
-            this.clenderecoDataGridViewTextBoxColumn.HeaderText = "cl_endereco";
-            this.clenderecoDataGridViewTextBoxColumn.Name = "clenderecoDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "cl_celular";
+            this.dataGridViewTextBoxColumn7.HeaderText = "cl_celular";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
-            // clnumeroDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn8
             // 
-            this.clnumeroDataGridViewTextBoxColumn.DataPropertyName = "cl_numero";
-            this.clnumeroDataGridViewTextBoxColumn.HeaderText = "cl_numero";
-            this.clnumeroDataGridViewTextBoxColumn.Name = "clnumeroDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "cl_telefone2";
+            this.dataGridViewTextBoxColumn8.HeaderText = "cl_telefone2";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             // 
-            // clbairroDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn9
             // 
-            this.clbairroDataGridViewTextBoxColumn.DataPropertyName = "cl_bairro";
-            this.clbairroDataGridViewTextBoxColumn.HeaderText = "cl_bairro";
-            this.clbairroDataGridViewTextBoxColumn.Name = "clbairroDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "cl_cep";
+            this.dataGridViewTextBoxColumn9.HeaderText = "cl_cep";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             // 
-            // clcidadeDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn10
             // 
-            this.clcidadeDataGridViewTextBoxColumn.DataPropertyName = "cl_cidade";
-            this.clcidadeDataGridViewTextBoxColumn.HeaderText = "cl_cidade";
-            this.clcidadeDataGridViewTextBoxColumn.Name = "clcidadeDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "cl_endereco";
+            this.dataGridViewTextBoxColumn10.HeaderText = "cl_endereco";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             // 
-            // clufDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn11
             // 
-            this.clufDataGridViewTextBoxColumn.DataPropertyName = "cl_uf";
-            this.clufDataGridViewTextBoxColumn.HeaderText = "cl_uf";
-            this.clufDataGridViewTextBoxColumn.Name = "clufDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "cl_numero";
+            this.dataGridViewTextBoxColumn11.HeaderText = "cl_numero";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             // 
-            // clemailDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn12
             // 
-            this.clemailDataGridViewTextBoxColumn.DataPropertyName = "cl_email";
-            this.clemailDataGridViewTextBoxColumn.HeaderText = "cl_email";
-            this.clemailDataGridViewTextBoxColumn.Name = "clemailDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "cl_bairro";
+            this.dataGridViewTextBoxColumn12.HeaderText = "cl_bairro";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             // 
-            // clnomepaiDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn13
             // 
-            this.clnomepaiDataGridViewTextBoxColumn.DataPropertyName = "cl_nomepai";
-            this.clnomepaiDataGridViewTextBoxColumn.HeaderText = "cl_nomepai";
-            this.clnomepaiDataGridViewTextBoxColumn.Name = "clnomepaiDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "cl_cidade";
+            this.dataGridViewTextBoxColumn13.HeaderText = "cl_cidade";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             // 
-            // clnomemaeDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn14
             // 
-            this.clnomemaeDataGridViewTextBoxColumn.DataPropertyName = "cl_nomemae";
-            this.clnomemaeDataGridViewTextBoxColumn.HeaderText = "cl_nomemae";
-            this.clnomemaeDataGridViewTextBoxColumn.Name = "clnomemaeDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "cl_uf";
+            this.dataGridViewTextBoxColumn14.HeaderText = "cl_uf";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             // 
-            // clprofissaoDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn15
             // 
-            this.clprofissaoDataGridViewTextBoxColumn.DataPropertyName = "cl_profissao";
-            this.clprofissaoDataGridViewTextBoxColumn.HeaderText = "cl_profissao";
-            this.clprofissaoDataGridViewTextBoxColumn.Name = "clprofissaoDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "cl_email";
+            this.dataGridViewTextBoxColumn15.HeaderText = "cl_email";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
             // 
-            // clobservacoesDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn16
             // 
-            this.clobservacoesDataGridViewTextBoxColumn.DataPropertyName = "cl_observacoes";
-            this.clobservacoesDataGridViewTextBoxColumn.HeaderText = "cl_observacoes";
-            this.clobservacoesDataGridViewTextBoxColumn.Name = "clobservacoesDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "cl_nomepai";
+            this.dataGridViewTextBoxColumn16.HeaderText = "cl_nomepai";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "cl_nomemae";
+            this.dataGridViewTextBoxColumn17.HeaderText = "cl_nomemae";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.DataPropertyName = "cl_profissao";
+            this.dataGridViewTextBoxColumn18.HeaderText = "cl_profissao";
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.DataPropertyName = "cl_observacoes";
+            this.dataGridViewTextBoxColumn19.HeaderText = "cl_observacoes";
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
             // 
             // teste
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(412, 294);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(605, 311);
+            this.Controls.Add(this.clienteDataGridView);
             this.Name = "teste";
             this.Text = "teste";
             this.Load += new System.EventHandler(this.teste_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sysOticaDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sysOticaDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sysOticaDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sysOticaDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource sysOticaDataSetBindingSource;
         private SysOticaDataSet sysOticaDataSet;
         private System.Windows.Forms.BindingSource clienteBindingSource;
         private SysOticaDataSetTableAdapters.clienteTableAdapter clienteTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clnomeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cldatanascimentoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clcpfDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clrgDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cltelefoneDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clcelularDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cltelefone2DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clcepDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clenderecoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clnumeroDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clbairroDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clcidadeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clufDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clemailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clnomepaiDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clnomemaeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clprofissaoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clobservacoesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource clienteBindingSource1;
+        private SysOticaDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.DataGridView clienteDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
     }
 }

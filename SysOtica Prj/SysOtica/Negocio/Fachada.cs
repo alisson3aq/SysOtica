@@ -10,8 +10,8 @@ namespace SysOtica.Negocio
 {
     public class Fachada
     {
-        #region Leonardo
-        //Fornecedor
+
+        #region Fornecedor
         FornecedorControlador fornControl = new FornecedorControlador();
         public void InserirFornecedor(Fornecedor fornecedor)
         {
@@ -38,165 +38,102 @@ namespace SysOtica.Negocio
         {
             fornControl.VerificaDuplicidadeFornecedor(fornecedor);
         }
+        #endregion
 
-        //public Fornecedor GetFornecedor(int id)
-        //{
-        //    return fornControl.GetFornecedor(id);
-        //}
-
-        //Usuario
+        #region Usuario
         UsuarioControlador usu = new UsuarioControlador();
-        public void Insert(Usuario usuario)
+        public void InserirUsuario(Usuario usuario)
         {
             usu.VerificaPreenchimento(usuario);
             usu.Insert(usuario);
         }
-        public void Uptade(Usuario usuario)
+        public void AlterarUsuario(Usuario usuario)
         {
             usu.Uptade(usuario);
         }
 
-        public void Delete(Usuario usuario)
+        public void DeletarUsuario(Usuario usuario)
         {
             usu.Delete(usuario);
         }
-        public void Duplicidade(Usuario usuario)
+        public void DuplicidadeUsuario(Usuario usuario)
         {
             usu.VerificaPreenchimento(usuario);
         }
-
-        public List<Usuario> listaUsuario
-        {
-            get
-            {
-                return listaUsuario;
-            }
-        }
-
-
         #endregion
 
-        #region Dayse
-        /*########################################
-          ###############CLIENTE##################
-          ########################################
-       */
+        #region Cliente
 
         //Salva um Cliente novo no banco de Dados
         ClienteControlador clientecontrolador = new ClienteControlador();
-        public void Insert(Cliente cliente)
+        public void InserirCliente(Cliente cliente)
         {
             clientecontrolador.verificaPreenchimento(cliente);
             clientecontrolador.Insert(cliente);
         }
 
-        public void Update(Cliente cliente)
+        public void AlterarCliente(Cliente cliente)
         {
             clientecontrolador.Update(cliente);
         }
 
-        public void Delete(Cliente cliente)
+        public void DeletarCliente(Cliente cliente)
         {
-           clientecontrolador.Delete(cliente);
-        }
-   
-        public void Duplicidade(Cliente cliente)
-        {
-
-         clientecontrolador.Duplicidade(cliente);
+            clientecontrolador.Delete(cliente);
         }
 
+        public void DuplicidadeCliente(Cliente cliente)
+        {
 
-
-
-        /*########################################
-        ###############LOCAL##################
-        ########################################
-        */
-
-        //Salva um Local novo no banco de Dados
-
+            clientecontrolador.Duplicidade(cliente);
+        }
         #endregion
 
-        #region Carlão
-
-
-        //Receita
+        #region Receita
         ReceitaControlador recControlador = new ReceitaControlador();
-        public void Insert(Receita receita)
+        public void InserirReceita(Receita receita)
         {
             recControlador.Insert(receita);
         }
 
-        public void Update(Receita receita)
+        public void AlterarReceita(Receita receita)
         {
             recControlador.Update(receita);
         }
-        public void Delete(Receita receita)
+        public void DeletarReceita(Receita receita)
         {
             recControlador.Delete(receita);
         }
-        public void Duplicidade(Receita receita)
+        public void DuplicidadeReceita(Receita receita)
         {
             recControlador.VerificaPreenchimento(receita);
         }
-        List<Receita> select1
-        {
-            get
-            {
-                return select1;
-            }
+        #endregion
 
-        }
-
-
-
-
-
-            //Produto
+        #region Produto
         ProdutoControlador controladorProduto = new ProdutoControlador();
-        public void Insert(Produto produto)
+        public void InserirProduto(Produto produto)
         {
             controladorProduto.verificaPreenchimento(produto);
             controladorProduto.Insert(produto);
         }
 
-        public void Update(Produto produto)
+        public void AlterarProduto(Produto produto)
         {
             controladorProduto.Update(produto);
         }
 
 
-        public void Delete(Produto produto)
+        public void DeletarProduto(Produto produto)
         {
             controladorProduto.Delete(produto);
         }
 
-        public void Duplicidade(Produto produto)
+        public void DuplicidadeProduto(Produto produto)
         {
             controladorProduto.Duplicidade(produto);
         }
-
-        List<Produto> select
-        {
-
-            get
-            {
-                return select;
-            }
-
-        }
-
-
-
-
-
-
-
-
-
-
-
         #endregion
+
     }
 }

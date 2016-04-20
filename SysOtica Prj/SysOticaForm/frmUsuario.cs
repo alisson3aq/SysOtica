@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SysOtica;
 using SysOtica.Negocio.Classes_Basicas;
+using SysOtica.Negocio;
+
 
 namespace SysOticaForm
 {
@@ -50,7 +52,10 @@ namespace SysOticaForm
                     usuario.Us_endereco = tbEndereco.Text;
                     usuario.Us_telefone = maskedTextBoxTelefone.Text;
                 };
-             //   new UsuarioDados().Inserir(usuario);
+                Fachada fachada = new Fachada();
+                fachada.
+
+
                 MessageBox.Show("Cadastro feito com Sucesso !");
 
 

@@ -112,8 +112,10 @@ namespace SysOticaForm
             
         }
 
-
-
-
+        private void vendaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            teste tt = new teste();
+            tt.Show();
+        }
     }
 }

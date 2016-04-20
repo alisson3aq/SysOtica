@@ -16,7 +16,7 @@ namespace SysOtica.Conexao
         #endregion
 
         //string de conexão obtida para o sql sever
-        string connectionStringSqlServer = @"Data Source=DESKTOP-KA9UELE\SQLEXPRESS;Initial Catalog= SysOtica;UId= sysotica;Password= 123456";
+        string connectionStringSqlServer = @"Data Source=DESKTOP-G6CQ56U;Initial Catalog= SysOtica;UId= sysotica;Password= 123456";
         //DESKTOP-G6CQ56U\SQLSERVER14
         public void Conecta()
         {

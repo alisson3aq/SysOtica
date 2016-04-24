@@ -135,11 +135,7 @@ namespace SysOticaForm
                 {
                     cbGrife.Items.Add(oculossol[i]);
                 }
-                /*string escolha;
-
-              escolha = cbGrife.SelectedItem.ToString();
-
-              MessageBox.Show("a opção escolhida foi:  " + escolha);*/
+            
             }
         }
 

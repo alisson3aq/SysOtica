@@ -10,7 +10,8 @@ using System.Windows.Forms;
 using SysOtica;
 using SysOtica.Negocio;
 using SysOtica.Negocio.Classes_Basicas;
-
+using SysOtica.Conexao;
+using System.Collections;
 
 namespace SysOticaForm
 {
@@ -22,9 +23,11 @@ namespace SysOticaForm
         string[] oculosgrau = {"Pirre Cardin","Hugo Boss","Tommy Hilfiger", "D&G",
                                "Turma da Mônica","Lacoste","Adidas","Playboy","Ray-Ban","Ralph Lauren","Evoke" };
 
-
         string[] grupo = { "Oculos de Grau", "Oculos de Sol" };
 
+        //
+       
+        //
         public formProduto()
         {
             InitializeComponent();
@@ -54,8 +57,8 @@ namespace SysOticaForm
                     produto.Pr_unidade = cbUnidade.Text;
                     int Fr_id = !String.IsNullOrEmpty(cbFornecedor.Text) ? Convert.ToInt32(cbFornecedor.SelectedValue.ToString()) : 0;
                     //produto.Fr_id = fachada.GetFornecedor(Fr_id);
-                    produto.Pr_grupo = cbGrupo.Text;
-                    produto.Pr_grife = cbGrife.Text;
+                    produto.Pr_grupo = cbGrupo.SelectedItem.ToString();
+                    produto.Pr_grife = cbGrife.SelectedItem.ToString();
                     produto.Pr_valor = int.Parse(tbValor.Text);
                     produto.Pr_qtd = int.Parse(tbQuantidade.Text);
                     produto.Pr_estoqueminimo = int.Parse(tbEstoqueMinimo.Text);
@@ -108,13 +111,8 @@ namespace SysOticaForm
                 cbGrupo.Items.Add(grupo[i]);
             }
 
-
-
-
-
-
-
-      }   
+            CarregaForncedores();
+        }   
         private void button2_Click(object sender, EventArgs e)
         {
             frmFornecedor nvfrn = new frmFornecedor();
@@ -122,67 +120,61 @@ namespace SysOticaForm
         }
 
      
-        
-
        
-
-        private void cbGrife_SelectedIndexChanged(object sender, EventArgs e)
+     
+      private void cbGrupo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbGrupo.SelectedValue != null)
+            if (cbGrupo.SelectedIndex == 0)// seleciona o primeiro index do combobox
             {
 
-                for (int i = 0; i < oculossol.Count(); i++)
-                {
-                    cbGrife.Items.Add(oculossol[i]);
-                }
-            
-            }
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        /*private void cbGrife_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
-           
-          
-            
-            /*else if (cbGrupo.SelectedIndex.Equals("Oculos de Grau"))
-            {
-
-                for (int i = 0; i < oculosgrau.Count(); i++)
+                for (int i = 0; i < oculosgrau.Count(); i++) // carrega combobox caso o index selecionado seja = 0
                 {
                     cbGrife.Items.Add(oculosgrau[i]);
                 }
 
+            }
 
-                string escolha1;
+            if (cbGrupo.SelectedIndex == 1)// seleciona o segundo index do combobox
+            {
+                cbGrife.Items.Clear();// Limpa os itens comboBox
+                for (int j = 0; j < oculossol.Count(); j++) // carrega combobox caso o index selecionado seja = 1
+                {
+                    cbGrife.Items.Add(oculossol[j]);
+                }
+
+            }
+      
+            
+        }
+
+
+
+        private void CarregaForncedores()
+        {
+
+            FornecedoresDados fd = new FornecedoresDados();
+            string item;
+            Fornecedor forn = new Fornecedor();            
+            List<Fornecedor> carregaforn = fd.pegaFornenedor();
+            for (int i = 0; i < carregaforn.Count(); i++)
+            {
+               
+                forn = carregaforn[i];
+                item = forn.Fr_id +    "-"   +   forn.Fr_fantasia;
+                cbFornecedor.Items.Add(item);
+
+            }
+
+   
+        }
+
+
+                /*string escolha1;
 
                 escolha1 = cbGrife.SelectedItem.ToString();
 
-                MessageBox.Show("a opção escolhida foi:  " + escolha1);
-
-
-            }
-            else
-            {
-                MessageBox.Show("Selecione um item por favor!");
-            }
-        }*/
-
-
+                MessageBox.Show("a opção escolhida foi:  " + escolha1)*/
     }
+
+
 }

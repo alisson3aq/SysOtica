@@ -296,5 +296,49 @@ namespace SysOtica.Conexao
             return retorno;
         }
 
+
+
+        public List<Fornecedor> pegaFornenedor()
+        {
+
+
+            this.Conecta();
+            String sql = "Select * from Fornecedor Order By fr_id";
+            List<Fornecedor> lista = new List<Fornecedor>();
+            SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                Fornecedor fornecedor = new Fornecedor();
+
+
+                fornecedor.Fr_id = dr.GetInt32(dr.GetOrdinal("fr_id"));
+                fornecedor.Fr_razaosocial = dr.GetString(dr.GetOrdinal("fr_razaosocial"));
+                fornecedor.Fr_inscricaoestadual = dr.GetString(dr.GetOrdinal("fr_inscricaoestadual"));
+                fornecedor.Fr_fantasia = dr.GetString(dr.GetOrdinal("fr_fantasia"));
+                fornecedor.Fr_endereco = dr.GetString(dr.GetOrdinal("fr_endereco"));
+                fornecedor.Fr_cidade = dr.GetString(dr.GetOrdinal("fr_cidade"));
+                fornecedor.Fr_uf = dr.GetString(dr.GetOrdinal("fr_uf"));
+                fornecedor.Fr_bairro = dr.GetString(dr.GetOrdinal("fr_bairro"));
+                fornecedor.Fr_cep = dr.GetString(dr.GetOrdinal("fr_cep"));
+                fornecedor.Fr_contato = dr.GetString(dr.GetOrdinal("fr_contato"));
+                fornecedor.Fr_telefone = dr.GetString(dr.GetOrdinal("fr_telefone"));
+                fornecedor.Fr_fax = dr.GetString(dr.GetOrdinal("fr_fax"));
+                fornecedor.Fr_email = dr.GetString(dr.GetOrdinal("fr_email"));
+                fornecedor.Fr_nomerepresentante = dr.GetString(dr.GetOrdinal("fr_nomerepresentante"));
+                fornecedor.Fr_telefonerepresentante = dr.GetString(dr.GetOrdinal("fr_telefonerepresentante"));
+                fornecedor.Fr_celularrepresentante = dr.GetString(dr.GetOrdinal("fr_celularrepresentante"));
+                fornecedor.Fr_observacoes = dr.GetString(dr.GetOrdinal("fr_observacoes"));
+                fornecedor.Fr_cnpj = dr.GetString(dr.GetOrdinal("fr_observacoes"));
+
+                lista.Add(fornecedor);
+            }
+            dr.Close();
+            this.Desconecta();
+            return lista;
+        }
+
+
     }
 }

@@ -38,6 +38,9 @@ namespace SysOtica.Negocio
         {
             fornControl.VerificaDuplicidadeFornecedor(fornecedor);
         }
+
+
+
         #endregion
 
         #region Usuario

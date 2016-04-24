@@ -61,7 +61,7 @@ namespace SysOticaForm
                     receita.Rc_dtavalidade = Convert.ToDateTime(data);
 
                     Fachada fachada = new Fachada();
-                    fachada.Insert(receita);
+                    fachada.InserirReceita(receita);
                     MessageBox.Show("Receita cadastra com sucesso.");
                     LimparCampos();
 

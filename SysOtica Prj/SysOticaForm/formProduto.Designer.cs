@@ -207,6 +207,7 @@
             this.cbGrife.Name = "cbGrife";
             this.cbGrife.Size = new System.Drawing.Size(268, 21);
             this.cbGrife.TabIndex = 4;
+            this.cbGrife.SelectedIndexChanged += new System.EventHandler(this.cbGrife_SelectedIndexChanged);
             // 
             // cbGrupo
             // 
@@ -215,6 +216,7 @@
             this.cbGrupo.Name = "cbGrupo";
             this.cbGrupo.Size = new System.Drawing.Size(268, 21);
             this.cbGrupo.TabIndex = 3;
+         
             // 
             // cbFornecedor
             // 

@@ -57,7 +57,7 @@ namespace SysOticaForm
                 }
 
                 Fachada fachada = new Fachada();
-                fachada.Insert(cliente);
+                fachada.InserirCliente(cliente);
                 //new ClienteDados().Inserir(cliente);
                 MessageBox.Show("Cliente Cadastrado !");
                 LimparCampos();

@@ -16,6 +16,15 @@ namespace SysOticaForm
 {
     public partial class formProduto : Form
     {
+        string[] oculossol = {"Arnette","Blue Bay","Christian Dior", "D&G",
+                               "Diesel","Armani","mormaii","Oakley","Ray-Ban","Ralph Lauren","HB" };
+
+        string[] oculosgrau = {"Pirre Cardin","Hugo Boss","Tommy Hilfiger", "D&G",
+                               "Turma da Mônica","Lacoste","Adidas","Playboy","Ray-Ban","Ralph Lauren","Evoke" };
+
+
+        string[] grupo = { "Oculos de Grau", "Oculos de Sol" };
+
         public formProduto()
         {
             InitializeComponent();
@@ -52,7 +61,7 @@ namespace SysOticaForm
                     produto.Pr_estoqueminimo = int.Parse(tbEstoqueMinimo.Text);
 
                 }
-                fachada.Insert(produto);
+                fachada.InserirProduto(produto);
                 //new ProdutoDados().inserir(produto);
                 MessageBox.Show("Produto Cadastrado com Sucesso!");
                 LimparCampos();
@@ -93,12 +102,91 @@ namespace SysOticaForm
             //cbFornecedor.DataSource = lista;
             //cbFornecedor.DisplayMember = "fr_fantasia";
             //cbFornecedor.ValueMember = "fr_id";
-        }
 
+            for (int i = 0; i < grupo.Count(); i++)
+            {
+                cbGrupo.Items.Add(grupo[i]);
+            }
+
+
+
+
+
+
+
+      }   
         private void button2_Click(object sender, EventArgs e)
         {
             frmFornecedor nvfrn = new frmFornecedor();
             nvfrn.Show();
         }
+
+     
+        
+
+       
+
+        private void cbGrife_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbGrupo.SelectedValue != null)
+            {
+
+                for (int i = 0; i < oculossol.Count(); i++)
+                {
+                    cbGrife.Items.Add(oculossol[i]);
+                }
+                /*string escolha;
+
+              escolha = cbGrife.SelectedItem.ToString();
+
+              MessageBox.Show("a opção escolhida foi:  " + escolha);*/
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*private void cbGrife_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+           
+          
+            
+            /*else if (cbGrupo.SelectedIndex.Equals("Oculos de Grau"))
+            {
+
+                for (int i = 0; i < oculosgrau.Count(); i++)
+                {
+                    cbGrife.Items.Add(oculosgrau[i]);
+                }
+
+
+                string escolha1;
+
+                escolha1 = cbGrife.SelectedItem.ToString();
+
+                MessageBox.Show("a opção escolhida foi:  " + escolha1);
+
+
+            }
+            else
+            {
+                MessageBox.Show("Selecione um item por favor!");
+            }
+        }*/
+
+
     }
 }

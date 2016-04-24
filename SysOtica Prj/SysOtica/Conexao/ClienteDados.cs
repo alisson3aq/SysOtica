@@ -18,7 +18,7 @@ namespace SysOtica.Conexao
             {
                 //abrir a conexão
                 this.Conecta();
-                string sql = "INSERT INTO cliente cl_nome, cl_datanascimento, cl_cpf, cl_rg, cl_telefone, cl_celular, cl_telefone2, cl_cep, cl_endereco, cl_numero, cl_bairro, cl_cidade, cl_email, cl_nomepai, cl_nomemae, cl_profissao, cl_observacoes, cl_uf";
+                string sql = "INSERT INTO Cliente (cl_nome, cl_datanascimento, cl_cpf, cl_rg, cl_telefone, cl_celular, cl_telefone2, cl_cep, cl_endereco, cl_numero, cl_bairro, cl_cidade, cl_uf, cl_email, cl_nomepai, cl_nomemae, cl_profissao, cl_observacoes) Values (@cl_nome, @cl_datanascimento, @cl_cpf, @cl_rg, @cl_telefone, @cl_celular, @cl_telefone2, @cl_cep, @cl_endereco, @cl_numero, @cl_bairro, @cl_cidade, @cl_uf, @cl_email, @cl_nomepai, @cl_nomemae, @cl_profissao, @cl_observacoes)";
                 //instrucao a ser executada
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
 

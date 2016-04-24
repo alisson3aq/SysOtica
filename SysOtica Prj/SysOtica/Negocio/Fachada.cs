@@ -108,6 +108,11 @@ namespace SysOtica.Negocio
         {
             recControlador.VerificaPreenchimento(receita);
         }
+
+        public void Insert(Receita receita)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
 
         #region Produto

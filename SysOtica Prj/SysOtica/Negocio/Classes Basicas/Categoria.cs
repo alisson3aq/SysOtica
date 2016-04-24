@@ -19,6 +19,8 @@ namespace SysOtica.Negocio.Classes_Basicas
 
         public Categoria()
         {
+           
+                
             // TODO: Complete member initialization
         }
 

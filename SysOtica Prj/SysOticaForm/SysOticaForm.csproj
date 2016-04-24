@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="formCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formCategoria.Designer.cs">
+      <DependentUpon>formCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="formProduto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,9 @@
       <DependentUpon>teste.cs</DependentUpon>
     </Compile>
     <Compile Include="UsuarioDados.cs" />
+    <EmbeddedResource Include="formCategoria.resx">
+      <DependentUpon>formCategoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formProduto.resx">
       <DependentUpon>formProduto.cs</DependentUpon>
     </EmbeddedResource>
@@ -220,13 +229,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SysOtica\SysOtica.csproj">
-      <Project>{f7000c0a-0c87-4d7c-b7be-2f6e869f6f05}</Project>
-      <Name>SysOtica</Name>
-    </ProjectReference>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
+    <ProjectReference Include="..\SysOtica\SysOtica.csproj">
+      <Project>{b0f43429-5dc9-4dc0-8ba1-6dd2b7363a8a}</Project>
+      <Name>SysOtica</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

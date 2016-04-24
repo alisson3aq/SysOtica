@@ -117,5 +117,12 @@ namespace SysOticaForm
             teste tt = new teste();
             tt.Show();
         }
+
+        private void categoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formCategoria frmCategoria = new formCategoria();
+            frmCategoria.MdiParent = this;
+            frmCategoria.Show();
+        }
     }
 }

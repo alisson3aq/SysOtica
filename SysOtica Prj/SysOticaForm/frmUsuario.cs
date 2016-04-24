@@ -53,10 +53,10 @@ namespace SysOticaForm
                     usuario.Us_telefone = maskedTextBoxTelefone.Text;
                 };
                 Fachada fachada = new Fachada();
-                fachada.
+                //fachada.
 
 
-                MessageBox.Show("Cadastro feito com Sucesso !");
+                //MessageBox.Show("Cadastro feito com Sucesso !");
 
 
                 LimpaCampos();

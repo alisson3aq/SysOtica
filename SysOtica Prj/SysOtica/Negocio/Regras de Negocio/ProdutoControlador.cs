@@ -26,7 +26,7 @@ namespace SysOtica.Negocio.Regras_de_Negocio
             {
                 throw new CampoVazioException("Campo quantidade vazio!");
             }
-            if (produto.Pr_grupo.Equals(""))
+            if (produto.Pr_Categoria.Equals(""))
             {
                 throw new CampoVazioException("Campo grupo vazio!");
             }

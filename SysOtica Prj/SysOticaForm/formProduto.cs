@@ -23,11 +23,17 @@ namespace SysOticaForm
         string[] oculosgrau = {"Pirre Cardin","Hugo Boss","Tommy Hilfiger", "D&G",
                                "Turma da Mônica","Lacoste","Adidas","Playboy","Ray-Ban","Ralph Lauren","Evoke" };
 
-        string[] grupo = { "Oculos de Grau", "Oculos de Sol" };
+        string[] lentes =     {"Transitions","Hoya","ZEISS","Varilux" };
 
-        //
+        string[] lentesContato = {"Acuvue","Alcon","CooperVision","Solótica","ZEISS" };
+
+
+        string[] categoria = { "Oculos de Grau", "Oculos de Sol","Lente Bifocais ou Multifocais", "Lentes de Contato" };
+
+
+        
+        
        
-        //
         public formProduto()
         {
             InitializeComponent();
@@ -47,17 +53,25 @@ namespace SysOticaForm
 
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
+
+                
             try
             {
                 Fachada fachada = new Fachada();
                 Fornecedor fornecedor = new Fornecedor();
                 Produto produto = new Produto();
+            
+                string forn = cbFornecedor.SelectedItem.ToString();
+                int fornecedorID = Convert.ToInt32(forn.Substring(0, 1));//pega somente o ID do fornecedor
+
+
                 {
                     produto.Pr_descricao = tbDescricao.Text;
-                    produto.Pr_unidade = cbUnidade.Text;
-                    int Fr_id = !String.IsNullOrEmpty(cbFornecedor.Text) ? Convert.ToInt32(cbFornecedor.SelectedValue.ToString()) : 0;
+                    //produto.Pr_unidade = cbUnidade.Text;
+                    produto.Fr_id = fornecedorID;
+                    //int Fr_id = !string.IsNullOrEmpty(cbFornecedor.Text) ? Convert.ToInt32(cbFornecedor.SelectedValue.ToString()) : 0;               
                     //produto.Fr_id = fachada.GetFornecedor(Fr_id);
-                    produto.Pr_grupo = cbGrupo.SelectedItem.ToString();
+                    produto.Pr_Categoria = cbGrupo.SelectedItem.ToString();
                     produto.Pr_grife = cbGrife.SelectedItem.ToString();
                     produto.Pr_valor = int.Parse(tbValor.Text);
                     produto.Pr_qtd = int.Parse(tbQuantidade.Text);
@@ -106,9 +120,9 @@ namespace SysOticaForm
             //cbFornecedor.DisplayMember = "fr_fantasia";
             //cbFornecedor.ValueMember = "fr_id";
 
-            for (int i = 0; i < grupo.Count(); i++)
+            for (int i = 0; i < categoria.Count(); i++)
             {
-                cbGrupo.Items.Add(grupo[i]);
+                cbGrupo.Items.Add(categoria[i]);
             }
 
             CarregaForncedores();
@@ -134,19 +148,39 @@ namespace SysOticaForm
 
             }
 
-            if (cbGrupo.SelectedIndex == 1)// seleciona o segundo index do combobox
+            else if (cbGrupo.SelectedIndex == 1)
             {
-                cbGrife.Items.Clear();// Limpa os itens comboBox
-                for (int j = 0; j < oculossol.Count(); j++) // carrega combobox caso o index selecionado seja = 1
+                cbGrife.Items.Clear();
+                for (int j = 0; j < oculossol.Count(); j++) 
                 {
                     cbGrife.Items.Add(oculossol[j]);
                 }
 
             }
-      
-            
-        }
+            else if (cbGrupo.SelectedIndex == 2)
+            {
+                cbGrife.Items.Clear();
+                for (int j = 0; j < lentes.Count(); j++) 
+                {
+                    cbGrife.Items.Add(lentes[j]);
+                }
 
+            }
+            else if (cbGrupo.SelectedIndex == 3)
+            {
+                cbGrife.Items.Clear();
+                for (int j = 0; j < lentesContato.Count(); j++) 
+                {
+                    cbGrife.Items.Add(lentesContato[j]);
+                }
+
+            }
+            else {
+                MessageBox.Show("Selecione o uma categoria!");
+                 }
+
+
+        }
 
 
         private void CarregaForncedores()
@@ -160,7 +194,7 @@ namespace SysOticaForm
             {
                
                 forn = carregaforn[i];
-                item = forn.Fr_id +    "-"   +   forn.Fr_fantasia;
+                item = forn.Fr_id + "  -  " + forn.Fr_fantasia;
                 cbFornecedor.Items.Add(item);
 
             }

@@ -17,18 +17,15 @@ namespace SysOtica.Conexao
             {
                 //abrir a conexão
                 this.Conecta();
-                string sql = "INSERT INTO produto pr_descricao, pr_unidade, pr_grupo, pr_grife, pr_valor, pr_qtd, pr_estoqueminimo)";
+                string sql = "INSERT INTO Produto (pr_descricao, pr_grife, pr_valor, pr_estoqueminimo, fr_id, pr_categoria,  pr_quantidade) values ( @pr_descricao, @pr_grife, @pr_valor, @pr_estoqueminimo, @fr_id, @pr_categoria, @pr_quantidade)";
                 //instrucao a ser executada
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
 
                 cmd.Parameters.Add("@pr_descricao", SqlDbType.VarChar);
                 cmd.Parameters["@pr_descricao"].Value = produto.Pr_descricao;
 
-                cmd.Parameters.Add("@pr_unidade", SqlDbType.VarChar);
-                cmd.Parameters["@pr_unidade"].Value = produto.Pr_unidade;
-
-                cmd.Parameters.Add("@pr_grupo", SqlDbType.VarChar);
-                cmd.Parameters["@pr_grupo"].Value = produto.Pr_grupo;
+                /*cmd.Parameters.Add("@pr_unidade", SqlDbType.VarChar);
+                cmd.Parameters["@pr_unidade"].Value = produto.Pr_unidade;*/
 
                 cmd.Parameters.Add("@pr_grife", SqlDbType.VarChar);
                 cmd.Parameters["@pr_grife"].Value = produto.Pr_grife;
@@ -36,11 +33,19 @@ namespace SysOtica.Conexao
                 cmd.Parameters.Add("@pr_valor", SqlDbType.VarChar);
                 cmd.Parameters["@pr_valor"].Value = produto.Pr_valor;
 
-                cmd.Parameters.Add("@pr_qtd", SqlDbType.VarChar);
-                cmd.Parameters["@pr_qtd"].Value = produto.Pr_qtd;
+                cmd.Parameters.Add("@pr_quantidade", SqlDbType.VarChar);
+                cmd.Parameters["@pr_quantidade"].Value = produto.Pr_qtd;
 
                 cmd.Parameters.Add("@pr_estoqueminimo", SqlDbType.VarChar);
                 cmd.Parameters["@pr_estoqueminimo"].Value = produto.Pr_estoqueminimo;
+
+                cmd.Parameters.Add("@fr_id", SqlDbType.Int);
+                cmd.Parameters["@fr_id"].Value = produto.Fr_id;
+
+                cmd.Parameters.Add("@pr_categoria", SqlDbType.VarChar);
+                cmd.Parameters["@pr_categoria"].Value = produto.Pr_Categoria;
+
+
 
                 //executando a instrucao 
                 cmd.ExecuteNonQuery();
@@ -74,9 +79,6 @@ namespace SysOtica.Conexao
                 cmd.Parameters.Add("@pr_unidade", SqlDbType.VarChar);
                 cmd.Parameters["@pr_unidade"].Value = produto.Pr_unidade;
 
-                cmd.Parameters.Add("@pr_grupo", SqlDbType.VarChar);
-                cmd.Parameters["@pr_grupo"].Value = produto.Pr_grupo;
-
                 cmd.Parameters.Add("@pr_grife", SqlDbType.VarChar);
                 cmd.Parameters["@pr_grife"].Value = produto.Pr_grife;
 
@@ -88,6 +90,10 @@ namespace SysOtica.Conexao
 
                 cmd.Parameters.Add("@pr_estoqueminimo", SqlDbType.VarChar);
                 cmd.Parameters["@pr_estoqueminimo"].Value = produto.Pr_estoqueminimo;
+
+                cmd.Parameters.Add("@pr_categoria", SqlDbType.VarChar);
+                cmd.Parameters["@pr_categoria"].Value = produto.Pr_Categoria;
+
 
                 //executando a instrucao 
                 cmd.ExecuteNonQuery();
@@ -204,7 +210,7 @@ namespace SysOtica.Conexao
                     produto.Pr_id = dbreader.GetInt32(dbreader.GetOrdinal("@pr_id"));
                     produto.Pr_descricao = dbreader.GetString(dbreader.GetOrdinal("@pr_descricao"));
                     produto.Pr_unidade = dbreader.GetString(dbreader.GetOrdinal("@pr_unidade"));
-                    produto.Pr_grupo = dbreader.GetString(dbreader.GetOrdinal("@pr_grupo"));
+                    produto.Pr_Categoria = dbreader.GetString(dbreader.GetOrdinal("@pr_categoria"));
                     produto.Pr_grife = dbreader.GetString(dbreader.GetOrdinal("@pr_grife"));
                     produto.Pr_valor = dbreader.GetDouble(dbreader.GetOrdinal("@pr_valor"));
                     produto.Pr_qtd = dbreader.GetInt32(dbreader.GetOrdinal("@pr_qtd"));

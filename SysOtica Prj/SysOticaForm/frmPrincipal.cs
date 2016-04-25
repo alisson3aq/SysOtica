@@ -124,5 +124,12 @@ namespace SysOticaForm
             frmCategoria.MdiParent = this;
             frmCategoria.Show();
         }
+
+        private void produtoFornecedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEntradaMovimentacao frmEntrada = new frmEntradaMovimentacao();
+            frmEntrada.MdiParent = this;
+            frmEntrada.Show();
+        }
     }
 }

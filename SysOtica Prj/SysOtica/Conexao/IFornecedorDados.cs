@@ -14,5 +14,6 @@ namespace SysOtica.Conexao
         void delete(Fornecedor fornecedor);
         bool verificaduplicidade(Fornecedor fornecedor);
         List<Cliente> select(Fornecedor filtro);
+        List<Fornecedor> pegaFornenedor();
     }
 }

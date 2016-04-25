@@ -11,20 +11,27 @@ namespace SysOtica.Negocio.Classes_Basicas
         private int pf_id;
         private int pf_qtd;
         private DateTime pf_dtentrada;
-        private Fornecedor fr_id;
+        //private Fornecedor fr_id;
         private string pf_tipo;
         private string pf_observacoes;
+       // private int fr_id;
+        //private int pr_id;
         private List<Produto> pr_id;
+        private List<Fornecedor> fr_id;
 
-        public ProdutoFornecedor(int pf_id, int pf_qtd, DateTime pf_dtentrada, Fornecedor fr_id, string pf_tipo, string pf_observacoes, List<Produto> pr_id)
+        public ProdutoFornecedor(int pf_id, int pf_qtd, DateTime pf_dtentrada, string pf_tipo, string pf_observacoes, List<Produto> pr_id, List<Fornecedor> fr_id)
         {
             this.pf_id = pf_id;
             this.pf_qtd = pf_qtd;
-            this.pf_dtentrada = pf_dtentrada;
-            this.fr_id = new Fornecedor();
+            this.pf_dtentrada = pf_dtentrada;         
             this.pf_tipo = pf_tipo;
             this.pf_observacoes = pf_observacoes;
-            this.pr_id = new List<Produto>();
+            this.Pr_id = new List<Produto>();
+            this.Fr_id = new List<Fornecedor>();
+        }
+
+        public ProdutoFornecedor()
+        {
         }
 
         public int Pf_id
@@ -66,18 +73,6 @@ namespace SysOtica.Negocio.Classes_Basicas
             }
         }
 
-        public Fornecedor Fr_id
-        {
-            get
-            {
-                return fr_id;
-            }
-
-            set
-            {
-                fr_id = value;
-            }
-        }
 
         public string Pf_tipo
         {
@@ -102,6 +97,19 @@ namespace SysOtica.Negocio.Classes_Basicas
             set
             {
                 pf_observacoes = value;
+            }
+        }
+
+        public List<Fornecedor> Fr_id
+        {
+            get
+            {
+                return fr_id;
+            }
+
+            set
+            {
+                fr_id = value;
             }
         }
 

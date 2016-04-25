@@ -9,7 +9,7 @@ using System.Data;
 
 namespace SysOtica.Conexao
 {
-    class ProdutoFornecedorDados : ConexaoBD, IConexaoBD, IProdutoFornecedor
+    class ProdutoFornecedorDados : ConexaoBD, IConexaoBD
     {
         public void inserir(ProdutoFornecedor produtofornecedor)
         {
@@ -48,15 +48,15 @@ namespace SysOtica.Conexao
 
        }
 
-        public List<ProdutoFornecedor> selecionafornecedor()
+       /* public List<ProdutoFornecedor> selecionafornecedor()
         {
             try
-               {
+            {
                 this.Conecta();
-                String sql = "Select p.fr_id AS IdFornecedor, f.fr_fantasia as NomeFantasia FROM Produto p Inner Join Fornecedor f on p.fr_id = f.fr_id" ;
+                String sql = "Select p.fr_id AS IdFornecedor, f.fr_fantasia as NomeFantasia FROM Produto p Inner Join Fornecedor f on p.fr_id = f.fr_id";
                 List<ProdutoFornecedor> lista = new List<ProdutoFornecedor>();
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
-              
+
 
 
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -78,13 +78,13 @@ namespace SysOtica.Conexao
                     produto.Pr_Categoria = dr.GetString(dr.GetOrdinal("pr_categoria"));
                     produto.Pr_qtd = dr.GetInt32(dr.GetOrdinal("pr_quantidade"));
 
-                    lista.Add(produto);
+                    // lista.Add(produto);
 
-                  
+
                 }
                 dr.Close();
                 this.Desconecta();
-                return lista;
+                //return lista;
 
 
 
@@ -95,12 +95,14 @@ namespace SysOtica.Conexao
 
 
             }
+            catch (Exception ex)
+            { }
 
 
 
 
 
-        }
+        }*/
 
         public List<ProdutoFornecedor> selecionaproduto(Produto pr_id)
         {

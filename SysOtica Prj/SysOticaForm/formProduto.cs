@@ -61,14 +61,11 @@ namespace SysOticaForm
                 Fornecedor fornecedor = new Fornecedor();
                 Produto produto = new Produto();
             
-                string forn = cbFornecedor.SelectedItem.ToString();
-                int fornecedorID = Convert.ToInt32(forn.Substring(0, 1));//pega somente o ID do fornecedor
-
+               
 
                 {
                     produto.Pr_descricao = tbDescricao.Text;
-                    //produto.Pr_unidade = cbUnidade.Text;
-                    produto.Fr_id = fornecedorID;
+                    //produto.Pr_unidade = cbUnidade.Text;                   
                     //int Fr_id = !string.IsNullOrEmpty(cbFornecedor.Text) ? Convert.ToInt32(cbFornecedor.SelectedValue.ToString()) : 0;               
                     //produto.Fr_id = fachada.GetFornecedor(Fr_id);
                     produto.Pr_Categoria = cbGrupo.SelectedItem.ToString();
@@ -103,8 +100,7 @@ namespace SysOticaForm
         public void LimparCampos()
         {
             tbDescricao.Text = "";
-            cbUnidade.Text = "";
-            cbFornecedor.Text = "";
+            cbUnidade.Text = "";            
             cbGrupo.Text = "";
             cbGrife.Text = "";
             tbValor.Text = "";
@@ -125,7 +121,7 @@ namespace SysOticaForm
                 cbGrupo.Items.Add(categoria[i]);
             }
 
-            CarregaForncedores();
+           
         }   
         private void button2_Click(object sender, EventArgs e)
         {
@@ -183,31 +179,16 @@ namespace SysOticaForm
         }
 
 
-        private void CarregaForncedores()
-        {
+    
 
-            FornecedoresDados fd = new FornecedoresDados();
-            string item;
-            Fornecedor forn = new Fornecedor();            
-            List<Fornecedor> carregaforn = fd.pegaFornenedor();
-            for (int i = 0; i < carregaforn.Count(); i++)
-            {
-               
-                forn = carregaforn[i];
-                item = forn.Fr_id + "  -  " + forn.Fr_fantasia;
-                cbFornecedor.Items.Add(item);
-
-            }
-
-   
-        }
+       
 
 
-                /*string escolha1;
+        /*string escolha1;
 
-                escolha1 = cbGrife.SelectedItem.ToString();
+        escolha1 = cbGrife.SelectedItem.ToString();
 
-                MessageBox.Show("a opção escolhida foi:  " + escolha1)*/
+        MessageBox.Show("a opção escolhida foi:  " + escolha1)*/
     }
 
 

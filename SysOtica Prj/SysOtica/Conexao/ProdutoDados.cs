@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SysOtica.Conexao
 {
-    class ProdutoDados : ConexaoBD, IConexaoBD
+   public class ProdutoDados : ConexaoBD, IConexaoBD
     {
         public void Insert(Produto produto)
         {
@@ -17,7 +17,7 @@ namespace SysOtica.Conexao
             {
                 //abrir a conexão
                 this.Conecta();
-                string sql = "INSERT INTO Produto (pr_descricao, pr_grife, pr_valor, pr_estoqueminimo, fr_id, pr_categoria,  pr_quantidade) values ( @pr_descricao, @pr_grife, @pr_valor, @pr_estoqueminimo, @fr_id, @pr_categoria, @pr_quantidade)";
+                string sql = "INSERT INTO Produto (pr_descricao, pr_grife, pr_valor, pr_estoqueminimo, pr_categoria,  pr_qtd) values ( @pr_descricao, @pr_grife, @pr_valor, @pr_estoqueminimo, @pr_categoria, @pr_qtd)";
                 //instrucao a ser executada
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
 
@@ -33,15 +33,13 @@ namespace SysOtica.Conexao
                 cmd.Parameters.Add("@pr_valor", SqlDbType.VarChar);
                 cmd.Parameters["@pr_valor"].Value = produto.Pr_valor;
 
-                cmd.Parameters.Add("@pr_quantidade", SqlDbType.VarChar);
-                cmd.Parameters["@pr_quantidade"].Value = produto.Pr_qtd;
+                cmd.Parameters.Add("@pr_qtd", SqlDbType.VarChar);
+                cmd.Parameters["@pr_qtd"].Value = produto.Pr_qtd;
 
                 cmd.Parameters.Add("@pr_estoqueminimo", SqlDbType.VarChar);
                 cmd.Parameters["@pr_estoqueminimo"].Value = produto.Pr_estoqueminimo;
 
-                cmd.Parameters.Add("@fr_id", SqlDbType.Int);
-                cmd.Parameters["@fr_id"].Value = produto.Fr_id;
-
+               
                 cmd.Parameters.Add("@pr_categoria", SqlDbType.VarChar);
                 cmd.Parameters["@pr_categoria"].Value = produto.Pr_Categoria;
 
@@ -66,7 +64,7 @@ namespace SysOtica.Conexao
             {
                 //abrir a conexão
                 this.Conecta();
-                string sql = "UPDATE produto SET ( pr_descricao = @pr_descricao, pr_unidade = @pr_unidade,pr_grupo = @pr_grupo,pr_grife = @pr_grife, pr_valor = @pr_valor,pr_qtd = @pr_qtd,pr_estoqueminimo = @pr_estoqueminimo) WHERE pr_id = @pr_id;";
+                string sql = "UPDATE produto SET ( pr_descricao = @pr_descricao, pr_grupo = @pr_grupo,pr_grife = @pr_grife, pr_valor = @pr_valor,pr_qtd = @pr_qtd,pr_estoqueminimo = @pr_estoqueminimo) WHERE pr_id = @pr_id;";
                 //instrucao a ser executada
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
 
@@ -76,9 +74,7 @@ namespace SysOtica.Conexao
                 cmd.Parameters.Add("@pr_descricao", SqlDbType.VarChar);
                 cmd.Parameters["@pr_descricao"].Value = produto.Pr_descricao;
 
-                cmd.Parameters.Add("@pr_unidade", SqlDbType.VarChar);
-                cmd.Parameters["@pr_unidade"].Value = produto.Pr_unidade;
-
+             
                 cmd.Parameters.Add("@pr_grife", SqlDbType.VarChar);
                 cmd.Parameters["@pr_grife"].Value = produto.Pr_grife;
 
@@ -209,10 +205,10 @@ namespace SysOtica.Conexao
 
                     produto.Pr_id = dbreader.GetInt32(dbreader.GetOrdinal("@pr_id"));
                     produto.Pr_descricao = dbreader.GetString(dbreader.GetOrdinal("@pr_descricao"));
-                    produto.Pr_unidade = dbreader.GetString(dbreader.GetOrdinal("@pr_unidade"));
+                   // produto.Pr_unidade = dbreader.GetString(dbreader.GetOrdinal("@pr_unidade"));
                     produto.Pr_Categoria = dbreader.GetString(dbreader.GetOrdinal("@pr_categoria"));
                     produto.Pr_grife = dbreader.GetString(dbreader.GetOrdinal("@pr_grife"));
-                    produto.Pr_valor = dbreader.GetDouble(dbreader.GetOrdinal("@pr_valor"));
+                    //produto.Pr_valor = dbreader.GetDouble(dbreader.GetOrdinal("@pr_valor"));
                     produto.Pr_qtd = dbreader.GetInt32(dbreader.GetOrdinal("@pr_qtd"));
                     produto.Pr_estoqueminimo = dbreader.GetInt32(dbreader.GetOrdinal("@pr_estoqueminimo"));
 
@@ -231,5 +227,71 @@ namespace SysOtica.Conexao
             }
             return retorno;
         }
+
+
+
+
+       public List<Produto> pegaproduto()
+        {
+
+
+
+            try
+            {
+
+                this.Conecta();
+            string sql = "Select * From produto order by pr_id";
+            List<Produto> lista = new List<Produto>();
+            SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+             
+                while (dr.Read())
+                {
+
+                    Produto p = new Produto();
+
+                 
+
+
+                    p.Pr_id = dr.GetInt32(dr.GetOrdinal("pr_id"));
+                    p.Pr_descricao = dr.GetString(dr.GetOrdinal("pr_descricao"));
+                    //p.Pr_unidade = dr.GetString(dr.GetOrdinal("@pr_unidade"));
+                    p.Pr_Categoria = dr.GetString(dr.GetOrdinal("pr_categoria"));
+                    p.Pr_grife = dr.GetString(dr.GetOrdinal("pr_grife"));
+                    p.Pr_valor = dr.GetDecimal(dr.GetOrdinal("pr_valor"));
+                    p.Pr_qtd = dr.GetInt32(dr.GetOrdinal("pr_qtd"));
+                    p.Pr_estoqueminimo = dr.GetInt32(dr.GetOrdinal("pr_estoqueminimo"));
+
+                    lista.Add(p);
+
+                }
+                dr.Close();
+                this.Desconecta();
+                return lista;
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao listar produto" + ex.Message);
+            }
+
+
+
+
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+
     }
 }

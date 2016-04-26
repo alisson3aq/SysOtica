@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SysOtica.Conexao;
+using SysOtica.Negocio.Classes_Basicas;
 
 namespace SysOticaForm
 {
@@ -22,7 +24,95 @@ namespace SysOticaForm
             Dispose();
         }
 
+        private void frmEntradaMovimentacao_Load(object sender, EventArgs e)
+        {
+            CarregaForncedores();
+
+            CarregaProduto();
 
 
+        }
+
+        public void LimparCampos()
+        {
+
+            txtQuantidade.Text = "";
+            dateTimePickerdtentrada.Text = "";
+            cmbTipo.Text = "";
+            richTxtObservacoes.Text = "";
+            cmbFornecedor.Text = "";
+            cmbProduto.Text = "";
+
+        }
+
+        private void CarregaProduto()
+        {
+            ProdutoDados pd = new ProdutoDados();
+            string items;
+            Produto p = new Produto();
+            List<Produto> carregaproduto = pd.pegaproduto();
+
+            for (int i = 0; i < carregaproduto.Count(); i++)
+            {
+                p = carregaproduto[i];
+                items = p.Pr_id + " -  " + p.Pr_descricao;
+                cmbProduto.Items.Add(items);
+
+            }
+
+        }
+
+
+        private void CarregaForncedores()
+        {
+
+            FornecedoresDados fd = new FornecedoresDados();
+            string item;
+            Fornecedor forn = new Fornecedor();
+            List<Fornecedor> carregaforn = fd.pegaFornenedor();
+            for (int i = 0; i < carregaforn.Count(); i++)
+            {
+
+                forn = carregaforn[i];
+                item = forn.Fr_id + "  -  " + forn.Fr_fantasia;
+                cmbFornecedor.Items.Add(item);
+
+            }
+
+        }
+
+        private void buttonSalvar_Click(object sender, EventArgs e)
+        {
+
+            ProdutoFornecedor pf = new ProdutoFornecedor();
+
+            try
+            {
+
+                pf.Pf_qtd = Convert.ToInt32(txtQuantidade.Text);
+                pf.Pf_dtentrada = Convert.ToDateTime(dateTimePickerdtentrada.Text);
+                pf.Pf_tipo = cmbTipo.SelectedItem.ToString();
+                pf.Pf_observacoes = richTxtObservacoes.Text;
+
+                ProdutoFornecedorDados pfd = new ProdutoFornecedorDados();
+                pfd.inserir(pf);
+
+                MessageBox.Show("Produto fornecedor inserido com sucesso!");
+                LimparCampos();
+
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao inserir Produto ao Fornecedor" + ex.Message);
+
+            }
+
+
+
+
+
+
+        }
     }
 }

@@ -30,7 +30,7 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,19 +38,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.buttonSalvar = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbTipo = new System.Windows.Forms.ComboBox();
+            this.dateTimePickerdtentrada = new System.Windows.Forms.DateTimePicker();
+            this.cmbFornecedor = new System.Windows.Forms.ComboBox();
+            this.cmbProduto = new System.Windows.Forms.ComboBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.richTxtObservacoes = new System.Windows.Forms.RichTextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.richTxtObservacoes);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtQuantidade);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -58,11 +59,10 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.buttonSalvar);
-            this.groupBox1.Controls.Add(this.listView1);
-            this.groupBox1.Controls.Add(this.comboBox3);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cmbTipo);
+            this.groupBox1.Controls.Add(this.dateTimePickerdtentrada);
+            this.groupBox1.Controls.Add(this.cmbFornecedor);
+            this.groupBox1.Controls.Add(this.cmbProduto);
             this.groupBox1.Location = new System.Drawing.Point(2, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(731, 315);
@@ -79,12 +79,12 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "Quantidade";
             // 
-            // textBox1
+            // txtQuantidade
             // 
-            this.textBox1.Location = new System.Drawing.Point(427, 109);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 12;
+            this.txtQuantidade.Location = new System.Drawing.Point(427, 109);
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.Size = new System.Drawing.Size(100, 20);
+            this.txtQuantidade.TabIndex = 12;
             // 
             // label5
             // 
@@ -133,7 +133,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(529, 280);
+            this.button2.Location = new System.Drawing.Point(538, 268);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 6;
@@ -143,55 +143,56 @@
             // 
             // buttonSalvar
             // 
-            this.buttonSalvar.Location = new System.Drawing.Point(632, 280);
+            this.buttonSalvar.Location = new System.Drawing.Point(619, 268);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(75, 23);
             this.buttonSalvar.TabIndex = 5;
             this.buttonSalvar.Text = "Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = true;
+            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
-            // listView1
+            // cmbTipo
             // 
-            this.listView1.Location = new System.Drawing.Point(336, 163);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(325, 97);
-            this.listView1.TabIndex = 4;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.cmbTipo.FormattingEnabled = true;
+            this.cmbTipo.Items.AddRange(new object[] {
             "Entrada",
             "Troca",
             "Devolução"});
-            this.comboBox3.Location = new System.Drawing.Point(33, 163);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 3;
+            this.cmbTipo.Location = new System.Drawing.Point(33, 163);
+            this.cmbTipo.Name = "cmbTipo";
+            this.cmbTipo.Size = new System.Drawing.Size(121, 21);
+            this.cmbTipo.TabIndex = 3;
             // 
-            // dateTimePicker1
+            // dateTimePickerdtentrada
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(30, 106);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 2;
+            this.dateTimePickerdtentrada.Location = new System.Drawing.Point(30, 106);
+            this.dateTimePickerdtentrada.Name = "dateTimePickerdtentrada";
+            this.dateTimePickerdtentrada.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerdtentrada.TabIndex = 2;
             // 
-            // comboBox2
+            // cmbFornecedor
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(424, 50);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(270, 21);
-            this.comboBox2.TabIndex = 1;
+            this.cmbFornecedor.FormattingEnabled = true;
+            this.cmbFornecedor.Location = new System.Drawing.Point(424, 50);
+            this.cmbFornecedor.Name = "cmbFornecedor";
+            this.cmbFornecedor.Size = new System.Drawing.Size(270, 21);
+            this.cmbFornecedor.TabIndex = 1;
             // 
-            // comboBox1
+            // cmbProduto
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(30, 50);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(296, 21);
-            this.comboBox1.TabIndex = 0;
+            this.cmbProduto.FormattingEnabled = true;
+            this.cmbProduto.Location = new System.Drawing.Point(30, 50);
+            this.cmbProduto.Name = "cmbProduto";
+            this.cmbProduto.Size = new System.Drawing.Size(296, 21);
+            this.cmbProduto.TabIndex = 0;
+            // 
+            // richTxtObservacoes
+            // 
+            this.richTxtObservacoes.Location = new System.Drawing.Point(336, 163);
+            this.richTxtObservacoes.Name = "richTxtObservacoes";
+            this.richTxtObservacoes.Size = new System.Drawing.Size(358, 96);
+            this.richTxtObservacoes.TabIndex = 14;
+            this.richTxtObservacoes.Text = "";
             // 
             // frmEntradaMovimentacao
             // 
@@ -201,6 +202,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmEntradaMovimentacao";
             this.Text = "frmEntradaMovimentacao";
+            this.Load += new System.EventHandler(this.frmEntradaMovimentacao_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -212,18 +214,18 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button buttonSalvar;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbTipo;
+        private System.Windows.Forms.DateTimePicker dateTimePickerdtentrada;
+        private System.Windows.Forms.ComboBox cmbFornecedor;
+        private System.Windows.Forms.ComboBox cmbProduto;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtQuantidade;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RichTextBox richTxtObservacoes;
     }
 }

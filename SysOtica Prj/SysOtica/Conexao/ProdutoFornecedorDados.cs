@@ -9,7 +9,7 @@ using System.Data;
 
 namespace SysOtica.Conexao
 {
-    class ProdutoFornecedorDados : ConexaoBD, IConexaoBD
+   public class ProdutoFornecedorDados : ConexaoBD, IConexaoBD
     {
         public void inserir(ProdutoFornecedor produtofornecedor)
         {
@@ -17,7 +17,7 @@ namespace SysOtica.Conexao
             try
             {
                 this.Conecta();
-                string sql = "INSERT INTO produtofornecedor(pf_qtd, pf_dtentrada, pr_id, fr_id, pf_tipo, pf_observacoes) Values (@pf_qtd, @pf_dtentrada, @pr_id, @fr_id, @pf_tipo, @pf_observacoes)";
+                string sql = "INSERT INTO produtofornecedor(pf_qtd, pf_dtentrada, pf_tipo, pf_observacoes) Values (@pf_qtd, @pf_dtentrada, @pf_tipo, @pf_observacoes) W";
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
 
 
@@ -26,12 +26,6 @@ namespace SysOtica.Conexao
 
                 cmd.Parameters.Add("@pf_dtentrada", SqlDbType.Date);
                 cmd.Parameters["@pf_dtentrada"].Value = produtofornecedor.Pf_dtentrada;
-
-                cmd.Parameters.Add("@pr_id", SqlDbType.Int);
-                cmd.Parameters["@pr_id"].Value = produtofornecedor.Pr_id;
-
-                cmd.Parameters.Add("@fr_id", SqlDbType.Int);
-                cmd.Parameters["@fr_id"].Value = produtofornecedor.Fr_id;
 
                 cmd.Parameters.Add("@pf_tipo", SqlDbType.VarChar);
                 cmd.Parameters["@pf_tipo"].Value = produtofornecedor.Pf_tipo;

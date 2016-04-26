@@ -13,9 +13,7 @@ namespace SysOtica.Negocio.Classes_Basicas
         private DateTime pf_dtentrada;
         //private Fornecedor fr_id;
         private string pf_tipo;
-        private string pf_observacoes;
-       // private int fr_id;
-        //private int pr_id;
+        private string pf_observacoes;    
         private List<Produto> pr_id;
         private List<Fornecedor> fr_id;
 

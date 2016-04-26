@@ -11,8 +11,7 @@ namespace SysOtica.Conexao
     {
 
         void inserir(ProdutoFornecedor produtofornecedor);
-        List<ProdutoFornecedor> selecionafornecedor();
-        List<ProdutoFornecedor> selecionaproduto(int pr_id);
+        
 
     }
 }

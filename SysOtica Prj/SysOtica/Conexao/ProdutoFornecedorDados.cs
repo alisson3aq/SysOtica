@@ -13,27 +13,44 @@ namespace SysOtica.Conexao
     {
         public void inserir(ProdutoFornecedor produtofornecedor)
         {
+            
 
             try
             {
-                this.Conecta();
-                string sql = "INSERT INTO produtofornecedor(pf_qtd, pf_dtentrada, pf_tipo, pf_observacoes) Values (@pf_qtd, @pf_dtentrada, @pf_tipo, @pf_observacoes) W";
-                SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
+                Produto p = new Produto();
+                Fornecedor f = new Fornecedor();
+                foreach (Object ProdutoFornecedor in p.pegaproduto)
+                       
+                         
+                {
+
+                    this.Conecta();
+                    string sql = "INSERT INTO produtofornecedor(pf_qtd, pf_dtentrada, pr_id, pf_tipo, pf_observacoes) Values (@pf_qtd, @pf_dtentrada, @pr_id, @pf_tipo, @pf_observacoes)";
+                    SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
 
 
-                cmd.Parameters.Add("@pf_qtd", SqlDbType.Int);
-                cmd.Parameters["@pf_qtd"].Value = produtofornecedor.Pf_qtd;
 
-                cmd.Parameters.Add("@pf_dtentrada", SqlDbType.Date);
-                cmd.Parameters["@pf_dtentrada"].Value = produtofornecedor.Pf_dtentrada;
+                    cmd.Parameters.Add("@pf_qtd", SqlDbType.Int);
+                    cmd.Parameters["@pf_qtd"].Value = produtofornecedor.Pf_qtd;
 
-                cmd.Parameters.Add("@pf_tipo", SqlDbType.VarChar);
-                cmd.Parameters["@pf_tipo"].Value = produtofornecedor.Pf_tipo;
+                    cmd.Parameters.Add("@pf_dtentrada", SqlDbType.Date);
+                    cmd.Parameters["@pf_dtentrada"].Value = produtofornecedor.Pf_dtentrada;
 
-                cmd.Parameters.Add("@pf_observacoes", SqlDbType.VarChar);
-                cmd.Parameters["@pf_observacoes"].Value = produtofornecedor.Pf_observacoes;
+                    cmd.Parameters.Add("@pr_id", SqlDbType.Int);
+                    cmd.Parameters["@pr_id"].Value = produtofornecedor.P.pegaproduto;
 
+                    //cmd.Parameters.Add("@fr_id", SqlDbType.Int);
+                    //cmd.Parameters["@fr_id"].Value = produtofornecedor.Fr_id;
+
+                    cmd.Parameters.Add("@pf_tipo", SqlDbType.VarChar);
+                    cmd.Parameters["@pf_tipo"].Value = produtofornecedor.Pf_tipo;
+
+                    cmd.Parameters.Add("@pf_observacoes", SqlDbType.VarChar);
+                    cmd.Parameters["@pf_observacoes"].Value = produtofornecedor.Pf_observacoes;
+                }
             }
+
+
             catch (Exception ex)
             {
 

@@ -88,13 +88,23 @@ namespace SysOticaForm
 
             try
             {
+                ProdutoFornecedorDados pfd = new ProdutoFornecedorDados();
 
+              // string forn = cmbFornecedor.SelectedItem.ToString();
+               //int fornecedorID = Convert.ToInt32(forn.Substring(0,1));
+
+                //int p = Convert.ToInt32(cmbProduto.SelectedItem.ToString().Substring(0, 1));
+                //int produtoID = Convert.ToInt32(p.Substring(0,1));
+
+
+                //pf.Fr_id = Convert.ToInt32(fornecedorID);
+                //pf.Pr_id = p;
                 pf.Pf_qtd = Convert.ToInt32(txtQuantidade.Text);
                 pf.Pf_dtentrada = Convert.ToDateTime(dateTimePickerdtentrada.Text);
                 pf.Pf_tipo = cmbTipo.SelectedItem.ToString();
                 pf.Pf_observacoes = richTxtObservacoes.Text;
 
-                ProdutoFornecedorDados pfd = new ProdutoFornecedorDados();
+               
                 pfd.inserir(pf);
 
                 MessageBox.Show("Produto fornecedor inserido com sucesso!");

@@ -11,21 +11,24 @@ namespace SysOtica.Negocio.Classes_Basicas
         private int pf_id;
         private int pf_qtd;
         private DateTime pf_dtentrada;
-        //private Fornecedor fr_id;
+        private Fornecedor f;
+        private Produto p;
         private string pf_tipo;
         private string pf_observacoes;    
-        private List<Produto> pr_id;
-        private List<Fornecedor> fr_id;
+       // private List<Produto> pr_id;
+       //private List<Fornecedor> fr_id;
 
-        public ProdutoFornecedor(int pf_id, int pf_qtd, DateTime pf_dtentrada, string pf_tipo, string pf_observacoes, List<Produto> pr_id, List<Fornecedor> fr_id)
+        public ProdutoFornecedor(int pf_id, int pf_qtd, DateTime pf_dtentrada, string pf_tipo, string pf_observacoes, Fornecedor f, Produto p) //List<Produto> pr_id, //List<Fornecedor> fr_id*/
         {
             this.pf_id = pf_id;
             this.pf_qtd = pf_qtd;
             this.pf_dtentrada = pf_dtentrada;         
             this.pf_tipo = pf_tipo;
             this.pf_observacoes = pf_observacoes;
-            this.Pr_id = new List<Produto>();
-            this.Fr_id = new List<Fornecedor>();
+            this.f = f;
+            this.p = p;  
+           //this.Pr_id = new List<Produto>();
+           //this.Fr_id = new List<Fornecedor>();
         }
 
         public ProdutoFornecedor()
@@ -98,29 +101,31 @@ namespace SysOtica.Negocio.Classes_Basicas
             }
         }
 
-        public List<Fornecedor> Fr_id
+       
+
+        public Fornecedor F
         {
             get
             {
-                return fr_id;
+                return f;
             }
 
             set
             {
-                fr_id = value;
+                f = value;
             }
         }
 
-        public List<Produto> Pr_id
+        public Produto P
         {
             get
             {
-                return pr_id;
+                return p;
             }
 
             set
             {
-                pr_id = value;
+                p = value;
             }
         }
     }

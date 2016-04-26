@@ -26,9 +26,9 @@ namespace SysOtica.Negocio.Classes_Basicas
         private String fr_celularrepresentante;
         private String fr_observacoes;
         private String fr_cnpj;
-        private List<ProdutoFornecedor> pf_id;
+        private List<Fornecedor> itemsFornecedor;
 
-        public Fornecedor(int fr_id, string fr_razaosocial, string fr_inscricaoestadual, string fr_fantasia, string fr_endereco, string fr_cidade, string fr_uf, string fr_bairro, string fr_cep, string fr_contato, string fr_telefone, string fr_fax, string fr_email, string fr_nomerepresentante, string fr_telefonerepresentante, string fr_celularrepresentante, string fr_observacoes, string fr_cnpj, List<ProdutoFornecedor> pf_id)
+        public Fornecedor(int fr_id, string fr_razaosocial, string fr_inscricaoestadual, string fr_fantasia, string fr_endereco, string fr_cidade, string fr_uf, string fr_bairro, string fr_cep, string fr_contato, string fr_telefone, string fr_fax, string fr_email, string fr_nomerepresentante, string fr_telefonerepresentante, string fr_celularrepresentante, string fr_observacoes, string fr_cnpj, List<Fornecedor> itemsFornecedor)
         {
             this.fr_id = fr_id;
             this.fr_razaosocial = fr_razaosocial;
@@ -48,7 +48,7 @@ namespace SysOtica.Negocio.Classes_Basicas
             this.fr_celularrepresentante = fr_celularrepresentante;
             this.fr_observacoes = fr_observacoes;
             this.fr_cnpj = fr_cnpj;
-            this.pf_id = new List<ProdutoFornecedor>();
+            this.ItemsFornecedor = new List<Fornecedor>();
         }
 
         public Fornecedor()
@@ -289,16 +289,16 @@ namespace SysOtica.Negocio.Classes_Basicas
             }
         }
 
-        public List<ProdutoFornecedor> Pf_id
+        public List<Fornecedor> ItemsFornecedor
         {
             get
             {
-                return pf_id;
+                return itemsFornecedor;
             }
 
             set
             {
-                pf_id = value;
+                itemsFornecedor = value;
             }
         }
     }
